@@ -1,0 +1,5 @@
+certifi==2020.11.8
+./Libreria/gmpy2-2.0.8-cp37-cp37m-win_amd64.whl
+mpmath==1.1.0
+sympy==1.7
+wincertstore==0.2
