@@ -6,4 +6,4 @@ import gmpy2
 gmpy2.invert(3, 7)
 
 pow(5, 2, 7)
- mpz("10", base=32).digits(16)
+mpz("10", base=32).digits(16)

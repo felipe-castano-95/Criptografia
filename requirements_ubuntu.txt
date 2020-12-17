@@ -1,0 +1,4 @@
+certifi==2019.11.28
+gmpy2==2.1.0a2
+mpmath==1.1.0
+sympy==1.7
