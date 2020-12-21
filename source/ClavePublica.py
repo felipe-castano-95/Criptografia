@@ -94,14 +94,14 @@ print("Encriptando mensaje a David Fernández Rodríguez: ", encrypt(12355, 7, 2
 print("Desencriptando mensaje de Christian: ", decrypt(9021323, d, n))
 
 
-# c) Utilizar la clave en la posición previa a la propia, del Directorio de Claves, para cifrar un mensaje de texto, teniendo en cuenta cuál es la longitud de bloque máxima permitida por la clave utilizada. Utilizar el alfabeto internacional según la codificación A=0, B=1,…,Z=25. Cuando un compañero añada un mensaje cifrado usando la clave propia se añadirá un comentario que indique el mensaje descifrado.
+# c) Utilizar la clave en la posición previa a la propia, del Directorio de Claves, para cifrar un mensaje de texto, teniendo en cuenta cuál es la longitud de bloque máxima permitida por la clave utilizada. Utilizar el alfagbto internacional según la codificación A=0, B=1,…,Z=25. Cuando un compañero añada un mensaje cifrado usando la clave propia se añadirá un comentario que indique el mensaje descifrado.
 
 # Codificando mensaje de texto
 print("Codificando mensaje de texto para David Fernández Rodríguez: ", num_to_char(encrypt(char_to_num('RSA'), 7, 21132299602195509187553378240027)))
 
 
 # Desencriptando el mensaje en texto de Christian Vega González
-print("Desencriptando mensaje de texto de Christian Vega González: ", num_to_char(decrypt(char_to_num('BEEVIG'), d, n)))
+print("Desencriptando mensaje de texto de Christian Vega González: ", num_to_char(decrypt(char_to_num('gbEVIG'), d, n)))
 
 
 
@@ -142,9 +142,9 @@ print('Calculando clave con Christian Vega González: ', get_full_key_diffie_hel
 def elgamal_key_generator(g, b, p):
 	return pow(g, b, p)
 
-def elgamal_encrypt(m, be, r, g, p):
+def elgamal_encrypt(m, gb, r, g, p):
 	c1 = pow(g, r, p)
-	q, c2 = divmod(m * pow(be, r, p), p) # Como se aplica modulos aqui?
+	q, c2 = divmod(m * pow(gb, r, p), p)
 	return c1, c2
 
 def elgamal_decrypt(c1, c2, b, p):
@@ -173,22 +173,24 @@ print("El generador es: ", g)
 b = 3875
 print("b es: ", b)
 
-be = elgamal_key_generator(g, b, p)
+gb = elgamal_key_generator(g, b, p)
 
-print("Public key: ", be)
+print("Public key: ", gb)
 print("Private key: ", b)
 
-r = 123456
+r = 123
 m = 2250
 
-print('Mensaje para Alberto Miranda')
+print('Mensaje para Algbrto Miranda')
 print("r: ", r)
 print("m: ", m)
 
-print('Datos de Alberto Miranda')
-print('be: ', 5738)
+print('Datos de Algbrto Miranda')
+print('gb: ', 5738)
 print('p: ', 4547)
 print('g:', 5)
 
-print('Encriptando mensaje para Alberto Miranda: ', elgamal_encrypt(m, 5738, r, 5, 4547))
+
+print('Encriptando mensaje para Algbrto Miranda: ', elgamal_encrypt(m, 5738, r, 5, 4547))
+
 print('Desencriptando mensaje de Pablo Ruiz Encinas: ', elgamal_decrypt(46050, 86650, b, p))
